@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ValueService } from '../value.service';
 
 @Component({
   selector: 'fohm-counter-widget',
@@ -8,16 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class CounterWidgetComponent implements OnInit {
   value = 0;
 
-  constructor() {
+  constructor(private valueService: ValueService) {
   }
 
   ngOnInit() {
+    const serviceCall = this.valueService.get();
+    serviceCall.subscribe((rsult: any) =>
+      this.value = +rsult
+    );
   }
 
   minusValue() {
-    this.value--;
+    this.valueService.minus().subscribe((rsult:any) =>
+      this.value = +rsult
+    );
   }
+
   plusValue() {
-    this.value++;
+    this.valueService.plus().subscribe((rsult:any) =>
+      this.value = +rsult
+    );
   }
 }

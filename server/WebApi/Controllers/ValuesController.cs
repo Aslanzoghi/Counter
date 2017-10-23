@@ -20,11 +20,11 @@ namespace WebApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_service.Get());
+            return Ok(_service.Get() );
         }
 
         // GET api/values
-        [HttpPut("minus")]
+        [HttpGet("minus")]
         public IActionResult Minus()
         {
             _service.Minus();
@@ -32,7 +32,7 @@ namespace WebApi.Controllers
         }
 
         // GET api/values
-        [HttpPut("plus")]
+        [HttpGet("plus")]
         public IActionResult Plus()
         {
             _service.Plus();
