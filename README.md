@@ -4,6 +4,7 @@ Already Deployed at following URL
 
 
 |Dependencies| Version|
+|------------|:-------|
 |npm         | 5.5.1  |
 |Angular CLI | 1.3.1  |
 |Asp.net Core| 2.0    |
