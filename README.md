@@ -1,6 +1,7 @@
 # Counter
 Small Task for FOHM
-Already Deployed at following URL
+Already Deployed at the following URL
+http://aslancounter.azurewebsites.net/index.html
 
 
 |Dependencies| Version|
@@ -14,6 +15,8 @@ Already Deployed at following URL
 1. Restore the Database
 2. Change Connection string in appsettings.josn
 3. Run the application
+
+
 Note: There is no need to build Client.
 Client already built and deployed as static files to the server
 
