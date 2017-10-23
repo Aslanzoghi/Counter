@@ -18,6 +18,11 @@ namespace WebApi.Services
 
         public DbContext Context => _context;
 
+        public List<Counter> List()
+        {
+            return _context.Counter.ToList();
+        }
+
         public void Save(string name, int value)
         {
             var counter = _context.Counter.FirstOrDefault(item => item.Name == name);

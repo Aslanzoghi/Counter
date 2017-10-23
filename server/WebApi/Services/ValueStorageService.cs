@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.Models;
 
 namespace WebApi.Services
 {
@@ -21,6 +22,11 @@ namespace WebApi.Services
             {
                 _repository.Save(name, _valueService.Get());
             }
+        }
+
+        public List<Counter> List()
+        {
+                return _repository.List();
         }
     }
 }

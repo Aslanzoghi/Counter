@@ -47,5 +47,12 @@ namespace WebApi.Controllers
             _storage.Save(name);
             return Ok();
         }
+
+        [HttpGet("list")]
+        public IActionResult list()
+        {
+           
+            return Ok(_storage.List());
+        }
     }
 }
