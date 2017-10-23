@@ -10,14 +10,18 @@ export class ValueService {
   }
 
   plus(): Observable<string> {
-    return this.client.get<string>(environment.baseUrl + 'api/Values/plus', { responseType: 'text' });
+    return this.client.get(environment.baseUrl + 'api/Values/plus', { responseType: 'text' });
   }
 
   minus(): Observable<string> {
-    return this.client.get<string>(environment.baseUrl + 'api/Values/minus',{ responseType: 'text' });
+    return this.client.get(environment.baseUrl + 'api/Values/minus', { responseType: 'text' });
   }
 
   get(): Observable<string> {
-    return this.client.get<string>(environment.baseUrl + 'api/Values',{ responseType: 'text' });
+    return this.client.get(environment.baseUrl + 'api/Values', { responseType: 'text' });
+  }
+
+  submit(name: string): Observable<string> {
+    return this.client.post(environment.baseUrl + `api/Values/save/${name}`, 0);
   }
 }

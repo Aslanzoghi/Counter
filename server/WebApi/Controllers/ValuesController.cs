@@ -12,9 +12,11 @@ namespace WebApi.Controllers
     {
         int value = 0;
         IValueService _service;
-        public ValuesController(IValueService service)
+        IValueStorageService _storage;
+        public ValuesController(IValueService service, IValueStorageService storage)
         {
             _service = service;
+            _storage = storage;
         }
 
         [HttpGet]
@@ -39,5 +41,11 @@ namespace WebApi.Controllers
             return Ok(_service.Get());
         }
 
+        [HttpPost("save/{name}")]
+        public IActionResult Save(string name)
+        {
+            _storage.Save(name);
+            return Ok();
+        }
     }
 }

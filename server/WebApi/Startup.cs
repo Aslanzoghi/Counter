@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using WebApi.Services;
+using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
 
 namespace WebApi
 {
@@ -26,7 +28,11 @@ namespace WebApi
         {
             services.AddMvc();
             services.AddCors();
-            services.AddScoped<IValueService, ValueService>();
+            services.AddDbContext<CounterStorageContext>(options =>
+             options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddSingleton<IValueService, ValueService>();
+            services.AddTransient<IValueStorageService, ValueStorageService>();
+            services.AddTransient<IRepository, Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
