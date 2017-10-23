@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'fohm-counter-display',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CounterDisplayComponent implements OnInit {
 
   constructor() { }
-
+  @Input() value;
   ngOnInit() {
   }
 

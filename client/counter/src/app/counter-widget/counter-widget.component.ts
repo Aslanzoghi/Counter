@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./counter-widget.component.css']
 })
 export class CounterWidgetComponent implements OnInit {
+  value = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  minusValue() {
+    this.value--;
+  }
+  plusValue() {
+    this.value++;
+  }
 }
