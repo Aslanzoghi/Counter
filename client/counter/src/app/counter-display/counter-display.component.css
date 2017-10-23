@@ -1,6 +1,6 @@
 .container{
   min-height: 3em;
-  max-width: 4em;
+  min-width: 4em;
   border: solid black 1px;
   font-size: xx-large;
   font-family:sans-serif;
