@@ -43,6 +43,7 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors(builder => builder.AllowAnyOrigin());
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }

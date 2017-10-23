@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ValueService } from '../value.service';
 
 @Component({
   selector: 'fohm-list',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private valueService: ValueService) {
+  }
+
+  counters: any[];
 
   ngOnInit() {
+    this.valueService.list().subscribe((result: any[]) => this.counters = result);
   }
 
 }

@@ -7,7 +7,7 @@ import { ValueService } from '../value.service';
 })
 export class SaveComponent {
 
-  storageName = 'test';
+  storageName = '';
 
   constructor(private valueServie: ValueService) {
   }

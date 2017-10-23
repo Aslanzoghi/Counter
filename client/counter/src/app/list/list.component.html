@@ -1,3 +1,13 @@
-<p>
-  list works!
-</p>
+<section>
+  <h1>List of Counters</h1>
+  <table>
+   <tr>
+     <th>Name</th>
+     <th>Value</th>
+   </tr>
+    <tr *ngFor="let item of counters">
+      <td>{{item.name}}</td>
+      <td>{{item.value}}</td>
+    </tr>
+  </table>
+</section>

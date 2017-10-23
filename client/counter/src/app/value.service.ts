@@ -20,6 +20,9 @@ export class ValueService {
   get(): Observable<string> {
     return this.client.get(environment.baseUrl + 'api/Values', { responseType: 'text' });
   }
+  list(): Observable<any[]> {
+    return this.client.get(environment.baseUrl + 'api/Values/list');
+  }
 
   submit(name: string): Observable<string> {
     return this.client.post(environment.baseUrl + `api/Values/save/${name}`, 0);
