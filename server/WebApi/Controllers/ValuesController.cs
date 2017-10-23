@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Services;
 
 namespace WebApi.Controllers
 {
@@ -10,27 +11,32 @@ namespace WebApi.Controllers
     public class ValuesController : Controller
     {
         int value = 0;
+        IValueService _service;
+        public ValuesController(IValueService service)
+        {
+            _service = service;
+        }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(value);
+            return Ok(_service.Get());
         }
 
         // GET api/values
-        [HttpPut]
+        [HttpPut("minus")]
         public IActionResult Minus()
         {
-            value--;
-            return Ok(value);
+            _service.Minus();
+            return Ok(_service.Get());
         }
 
         // GET api/values
-        [HttpPut]
-        public IActionResult Add()
+        [HttpPut("plus")]
+        public IActionResult Plus()
         {
-            value++;
-            return Ok(value);
+            _service.Plus();
+            return Ok(_service.Get());
         }
 
     }
