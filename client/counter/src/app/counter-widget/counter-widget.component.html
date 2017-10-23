@@ -1,5 +1,5 @@
-<div fxLayoutAlign="center center" fxLayout.xs="column" fxLayoutAlign.xs="space-around center" fxLayoutGap="3em" fxLayoutGap.xs="3em">
-<button fxFlex fxFlexOrder.xs="2" class="button" (click)="minusValue()">Minus</button>
-<fohm-counter-display [value]="value" fxFlexOrder.xs="1"></fohm-counter-display>
-<button fxFlex fxFlexOrder.xs="0" class="button" (click)="plusValue()">Plus</button>
+<div fxLayoutAlign.gt-xs="center center" fxLayout.xs="column" fxLayoutAlign.xs="space-between center" fxLayoutGap.gt-xs="3em" >
+<button fxFlex.xs="2em"  fxFlex.gt-xs="6em" fxFlexOrder.xs="2"  (click)="minusValue()">Minus</button>
+<fohm-counter-display fxFlex.gt-xs="9em" fxFlex.xs="1 1" [value]="value" fxFlexOrder.xs="1"></fohm-counter-display>
+<button fxFlex.xs="2em" fxFlex.gt-xs="6em" fxFlexOrder.xs="0" (click)="plusValue()">Plus</button>
 </div>
