@@ -9,15 +9,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { ValueService } from './value.service';
 import { FormsModule } from '@angular/forms';
 import { SaveComponent } from './save/save.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+import { ListComponent } from './list/list.component';
+import { appRoutes } from './Routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterDisplayComponent,
     CounterWidgetComponent,
-    SaveComponent
+    SaveComponent,
+    HomeComponent,
+    ListComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes
+    ),
     FormsModule,
     FlexLayoutModule,
     BrowserModule,
@@ -27,3 +36,4 @@ import { SaveComponent } from './save/save.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
